@@ -2,5 +2,10 @@ extends ../includes/layout
 
 block main-content
   section.content
-    div(ng-view)
+    div(ng-views)
   h2=mongoUser
+  div(ng-include="/partials/navbar-login'")
+  form
+    input(placeholder="Email", ng-model="username")
+    input(type="password", placeholder="Password", ng-model="password")
+    button(ng-click="signin(username, password)")
